@@ -1,0 +1,34 @@
+{
+  "organizer": {
+    "name": "Voice Of Words",
+    "email": "voiceofwords@example.com",
+    "phone": "+91 9876543210",
+    "image": ""
+  },
+  "logistics": {
+    "dateLabel": "Nov 16, 2025",
+    "timeLabel": "11:00 AM to 04:00 PM",
+    "venueLabel": "Prithvi Art Celebration, Ahmedabad, GJ, IN, 380015",
+    "name": "darsa",
+    "mapUrl": "https://maps.app.goo.gl/xWPG1HpAYFndkkQq5",
+    "link":[
+        {
+            "name" : "channaveer"
+        }
+
+    ]
+  },
+  "social": {
+    "instagram": "https://instagram.com/voiceofwords",
+    "facebook": "https://facebook.com/voiceofwords",
+    "twitter": "https://twitter.com/voiceofwords",
+    "linkedin": "https://linkedin.com/company/voiceofwords",
+    "youtube": "https://youtube.com/@voiceofwords"
+  },
+  "event": {
+    "id":"1"
+  }
+  
+}
+
+

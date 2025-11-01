@@ -1,0 +1,177 @@
+/* EventInfoCards.scss */
+.event-info-cards {
+  .cards-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    align-items: start;
+  }
+
+  .card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 18px;
+    box-shadow: 0 6px 18px rgba(11, 32, 64, 0.06);
+    border: 1px solid #f0f2f5;
+  }
+
+  .card-title {
+    margin: 0 0 14px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #17253b;
+  }
+
+  /* Organizer card specifics */
+  .organizer-card {
+    .organizer-body {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .organizer-media {
+      width: 64px;
+      height: 64px;
+      flex-shrink: 0;
+
+      .org-img {
+        width: 64px;
+        height: 64px;
+        object-fit: cover;
+        border-radius: 8px;
+        display: block;
+      }
+
+      .org-placeholder {
+        width: 64px;
+        height: 64px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+        background: linear-gradient(180deg,#fff,#fbfbfb);
+        font-size: 20px;
+      }
+    }
+
+    .organizer-info {
+      .org-name {
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: #1b3550;
+      }
+    }
+
+//     .org-contact {
+//   display: grid;
+//   grid-template-columns: repeat(2, minmax(0, 1fr)); /* two equal columns */
+//   gap: 12px;
+//   margin-top: 16px;
+
+//   .email-box {
+//     display: flex;
+//     align-items: center;
+//     gap: 12px;
+//     padding: 12px;
+//     background: #fbfbfb;
+//     border-radius: 8px;
+//     border: 1px solid #f1f3f6;
+//     width: 100%;
+//   }
+
+//       .email-icon { display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; color: #C4A93A; }
+//       .email-text { color: #243649; font-weight: 600; font-size: 0.95rem; word-break: break-all; }
+//     }
+.org-contact {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 12px;
+  margin-top: 16px;
+
+  .email-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    background: #fbfbfb;
+    border-radius: 8px;
+    border: 1px solid #f1f3f6;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .email-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    color: #C4A93A;
+  }
+
+  .email-text {
+    color: #243649;
+    font-weight: 600;
+    font-size: 0.95rem;
+    word-break: break-all;
+  }
+}
+  }
+
+  /* Details card specifics */
+  .details-card {
+    .detail-row {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      padding: 14px;
+      background: #fafafa;
+      border-radius: 8px;
+      margin-bottom: 14px;
+      border: 1px solid #f2f4f6;
+    }
+
+    .icon-box {
+      width: 56px;
+      height: 56px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      border: 1px solid #f2eec9; /* subtle golden border */
+      box-shadow: 0 6px 14px rgba(11, 32, 64, 0.04);
+    }
+
+    .icon-svg { display: block; }
+
+    .detail-body {
+      .detail-title {
+        font-weight: 700;
+        color: #17253b;
+        font-size: 0.98rem;
+      }
+      .detail-sub { color: #6b7280; font-size: 0.92rem; margin-top: 6px; }
+    }
+  }
+
+  /* Responsive - stack on small screens */
+  @media (max-width: 920px) {
+    .cards-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .details-card .detail-row {
+      padding: 12px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .card {
+      padding: 14px;
+    }
+    .organizer-card .organizer-media { width: 56px; height: 56px; .org-img { width:56px; height:56px; } }
+    .details-card .icon-box { width: 48px; height: 48px; }
+  }
+}

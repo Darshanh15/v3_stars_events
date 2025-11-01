@@ -1,0 +1,96 @@
+ {/* Two-column: Why + Logistics (left), Benefits (right) */}
+        <div className="grid two-col col-sm">
+          <div className="left-col col-sm">
+            {/* Why Organizing */}
+            {Array.isArray(why) && why.length > 0 && (
+              <section className="event-section why card">
+                <h2 className="section-title">{whyHeading}</h2>
+                <div className="grid-cards">
+                  {why.map((p, i) => (
+                    <article className="why-card" key={i}>
+                      <div className="why-index">{i + 1}</div>
+                      <div className="why-body">
+                        <h4>{p.title || p.key || `Point ${i + 1}`}</h4>
+                        <p>{p.desc || p.details || ""}</p>
+                      </div>
+                    </article>
+                  ))}
+                </div>
+              </section>
+            )}
+
+ <EventInfoCards1
+  organizer={{
+    name: "Voice Of Words",
+    email: "manishrathor1122002@gmail.com",
+    phone: "+91 9876543210",
+    image: "/images/voiceofwords.jpg"
+  }}
+  logistics={{
+    dateLabel: "Nov 16, 2025",
+    timeLabel: "11:00 AM to 04:00 PM",
+    venueLabel: "Prithvi Art Celebration, Ahmedabad, GJ, IN, 380015",
+    mapUrl: "https://maps.google.com/?q=Prithvi Art Celebration Ahmedabad"
+  }}
+  social={{
+    instagram: "https://instagram.com/voiceofwords",
+    facebook: "https://facebook.com/voiceofwords",
+    twitter: "https://twitter.com/voiceofwords",
+    linkedin: "https://linkedin.com/company/voiceofwords",
+    youtube: "https://youtube.com/@voiceofwords"
+  }}
+/>
+
+ <EventInfoCards
+  organizer={{ name: event.organizerName, email: event.organizerEmail, image: event.organizerImage }}
+  logistics={{ dateLabel: "Nov 16, 2025", timeLabel: "11:00 AM to 04:00 PM", venueLabel: "Prithvi art celebration, Ahmedabad, GJ, IN, 380015" }}
+/>
+            {/* Logistics */}
+            {(logistics?.dates || logistics?.venue || logistics?.contact) && (
+              <section className="event-section logistics card">
+                <h2 className="section-title">Logistics & Contact</h2>
+                <ul className="logistics-list">
+                  {logistics.dates && <li><strong>Dates:</strong> <span>{logistics.dates}</span></li>}
+                  {logistics.venue && <li><strong>Venue:</strong> <span>{logistics.venue}</span></li>}
+                  {(logistics.contact?.email || logistics.contact?.phone) && (
+                    <li><strong>Contact:</strong> <span>{`${logistics.contact?.email ?? ""}${logistics.contact?.email && logistics.contact?.phone ? " • " : ""}${logistics.contact?.phone ?? ""}`}</span></li>
+                  )}
+                </ul>
+                {logistics.mapLink && (
+                  <a className="btn outline small" href={logistics.mapLink} target="_blank" rel="noopener noreferrer">View on map</a>
+                )}
+              </section>
+            )}
+          </div>
+
+          <aside className="right-col">
+            {/* Benefits */}
+            {(Array.isArray(exhibitors) && exhibitors.length > 0) && (
+              <section className="event-section benefits card">
+                <h2 className="section-title">{exhibitorsHeading}</h2>
+                <div className="cards">
+                  {exhibitors.map((b, i) => (
+                    <div className="benefit-card" key={i}>
+                      <h4>{b.key || b.title || `Benefit ${i + 1}`}</h4>
+                      <p>{b.details || b.desc || ""}</p>
+                    </div>
+                  ))}
+                </div>
+              </section>
+            )}
+
+            {(Array.isArray(visitors) && visitors.length > 0) && (
+              <section className="event-section benefits card">
+                <h2 className="section-title">{visitorsHeading}</h2>
+                <div className="cards">
+                  {visitors.map((b, i) => (
+                    <div className="benefit-card" key={i}>
+                      <h4>{b.key || b.title || `Benefit ${i + 1}`}</h4>
+                      <p>{b.details || b.desc || ""}</p>
+                    </div>
+                  ))}
+                </div>
+              </section>
+            )}
+          </aside>
+        </div>

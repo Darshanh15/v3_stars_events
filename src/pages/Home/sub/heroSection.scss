@@ -1,0 +1,209 @@
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+
+  /* ---- Carousel background ---- */
+  .hero-carousel {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transform: scale(1.05);
+    transition: opacity 1.2s ease-in-out, transform 5s ease;
+  }
+
+  .hero-bg.active {
+    opacity: 1;
+    transform: scale(1);
+    z-index: 1;
+  }
+
+  /* ---- Overlay ---- */
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.45),
+      rgba(0, 0, 0, 0.3)
+    );
+    z-index: 2;
+  }
+
+  /* ---- Text Section ---- */
+  .hero-text {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    text-align: center;
+    animation: fadeInUp 1s ease forwards;
+
+    img {
+      width: 240px;
+      height: auto;
+      margin-bottom: 20px;
+      filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 10px;
+      line-height: 1.1;
+      text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    p {
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: #f5f5f5;
+      margin-bottom: 25px;
+      max-width: 600px;
+      text-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
+    }
+
+    .hero-button {
+      background: linear-gradient(135deg, #ff6a00, #ffb400);
+      color: white;
+      padding: 14px 28px;
+      border-radius: 50px;
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 6px 20px rgba(255, 106, 0, 0.3);
+
+      &:hover {
+        background: linear-gradient(135deg, #ffb400, #ff6a00);
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(255, 106, 0, 0.4);
+      }
+    }
+  }
+
+  /* ---- Animation ---- */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(15px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* ==================================================
+     📱 Responsive Design
+  ================================================== */
+
+  /* Tablet */
+  @media (max-width: 992px) {
+    .hero-text {
+      img {
+        width: 180px;
+      }
+      h1 {
+        font-size: 2.5rem;
+      }
+      p {
+        font-size: 1rem;
+        max-width: 480px;
+      }
+      .hero-button {
+        padding: 12px 24px;
+        font-size: 1rem;
+      }
+    }
+  }
+
+  /* Mobile Landscape */
+  @media (max-width: 768px) {
+    height: 100vh;
+
+    .hero-text {
+      padding: 1rem;
+      img {
+        width: 160px;
+      }
+      h1 {
+        font-size: 2rem;
+        line-height: 1.2;
+      }
+      p {
+        font-size: 0.95rem;
+        margin-bottom: 20px;
+      }
+      .hero-button {
+        font-size: 0.95rem;
+        padding: 10px 20px;
+      }
+    }
+
+    .hero-overlay {
+      background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.6),
+        rgba(0, 0, 0, 0.4)
+      );
+    }
+  }
+
+  /* Mobile Portrait (Phones under 480px) */
+  @media (max-width: 480px) {
+    height: 60vh;
+    align-items: center;
+    justify-content: center;
+
+    .hero-bg {
+      background-position: center top; /* keeps important parts visible */
+    }
+
+    .hero-text {
+      img {
+        width: 130px;
+        margin-bottom: 16px;
+      }
+      h1 {
+        font-size: 1.6rem;
+        line-height: 1.2;
+      }
+      p {
+        font-size: 0.85rem;
+        line-height: 1.4;
+        padding: 0 10px;
+        margin-bottom: 18px;
+      }
+      .hero-button {
+        padding: 8px 18px;
+        font-size: 0.9rem;
+        border-radius: 40px;
+      }
+    }
+  }
+}

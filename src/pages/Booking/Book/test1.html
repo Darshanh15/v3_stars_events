@@ -1,0 +1,323 @@
+import React, { useEffect } from "react";
+import { useLocation, useNavigate, Link } from "react-router-dom";
+import "./EventInfoCards.scss";
+
+export default function EventInfoCards() {
+  // organizer: { name, email, image }
+  // logistics: { dateLabel, timeLabel, venueLabel }
+
+  
+
+   const location = useLocation();
+  const navigate = useNavigate();
+  const event = location.state?.event;
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
+
+  if (!event) {
+    navigate("/", { replace: true });
+    return null;
+  }
+
+  const title = event.title || event.name || "Untitled Event";
+  const tagline = event.tagline || "";
+  const shortNote = event.shortNote || "";
+  const overview = event.overview || "";
+  const heroImages = Array.isArray(event.img) ? event.img : (Array.isArray(event.heroImages) ? event.heroImages : []);
+  const date = event.date || null;
+  const duration = event.duration || (event.meta && event.meta.duration) || "—";
+
+  const why = event.whyOrganizing?.points ?? (event.why ?? []);
+  const whyHeading = event.whyOrganizing?.heading ?? "Why We're Organizing";
+
+  const exhibitors = event.benefitsForExhibitors?.items ?? (event.benefitsExhibitors ?? []);
+  const exhibitorsHeading = event.benefitsForExhibitors?.heading ?? "Benefits for Exhibitors";
+
+  const visitors = event.benefitsForVisitors?.items ?? (event.benefitsVisitors ?? []);
+  const visitorsHeading = event.benefitsForVisitors?.heading ?? "Benefits for Visitors";
+
+  const logistics = event.logistics ?? {};
+  const ctas = event.ctas ?? {};
+
+  const {
+    name = organizername,
+    email = "abcdefg@gmail.com",
+    insta = "instagram",
+    call = "+91 9876543210",
+    facebook = "Face Book",
+    image = "",
+  } = organizer;
+  const {
+    dateLabel = logistics.dates,
+    timeLabel = logistics.date,
+    venueLabel = logistics.venue,
+    emial = logistics.contact.email,
+    phone = logistics.contact.phone,
+    mapUrl = "https://maps.app.goo.gl/965xUK5mPwVEfDMSA",
+  } = logistics;
+
+  return (
+    <div className="event-info-cards">
+      <div className="cards-grid">
+        {/* Organizer card */}
+        <section className="card organizer-card" aria-labelledby="org-title">
+          <h3 id="org-title" className="card-title">
+            Event Organizer
+          </h3>
+
+          <div className="organizer-body">
+            <div className="organizer-media">
+              {image ? (
+                <img src={image} alt={`${name} logo`} className="org-img" />
+              ) : (
+                <div className="org-placeholder">🎤</div>
+              )}
+            </div>
+
+            <div className="organizer-info">
+              <div className="org-name">{name}</div>
+            </div>
+          </div>
+
+          {email && (
+            <div className="org-contact">
+              <div className="email-box">
+                <span className="email-icon" aria-hidden>
+                  {/* mail SVG */}
+                  <svg
+                    width="18"
+                    height="14"
+                    viewBox="0 0 24 18"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M1 3.5C1 2.11929 2.11929 1 3.5 1H20.5C21.8807 1 23 2.11929 23 3.5V14.5C23 15.8807 21.8807 17 20.5 17H3.5C2.11929 17 1 15.8807 1 14.5V3.5Z"
+                      stroke="#C4A93A"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    <path
+                      d="M3 4.5L12 10.5L21 4.5"
+                      stroke="#C4A93A"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </span>
+                <span className="email-text">{email}</span>
+              </div>
+
+              {/* <div className="email-box"> */}
+                  {/* Calender SVG */}
+                {/* <span className="email-icon" aria-hidden>
+                  <svg
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="icon-svg"
+                  >
+                    <rect
+                      x="3"
+                      y="5"
+                      width="18"
+                      height="16"
+                      rx="2"
+                      stroke="#C4A93A"
+                      strokeWidth="1.5"
+                    />
+                    <path
+                      d="M16 3V7"
+                      stroke="#C4A93A"
+                      strokeWidth="1.6"
+                      strokeLinecap="round"
+                    />
+                    <path
+                      d="M8 3V7"
+                      stroke="#C4A93A"
+                      strokeWidth="1.6"
+                      strokeLinecap="round"
+                    />
+                    <path
+                      d="M3 11H21"
+                      stroke="#C4A93A"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                    />
+                  </svg>
+                </span> */}
+                {/* <span className="email-text">{email}</span> */}
+              {/* </div> */}
+
+              <div className="email-box">
+                <span className="email-icon" aria-hidden>
+                  {/* call SVG */}
+                  <svg
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="icon-svg"
+                  >
+                    <path
+                      d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.49 19.49 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.63A2 2 0 0 1 4.92 2h3a2 2 0 0 1 2 1.72 12.44 12.44 0 0 0 .7 2.73 2 2 0 0 1-.45 2.11l-1.27 1.27a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.44 12.44 0 0 0 2.73.7A2 2 0 0 1 22 16.92z"
+                      stroke="#C4A93A"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </span>
+                <span className="email-text">{call}</span>
+              </div>
+
+              <div className="email-box">
+                <span className="email-icon" aria-hidden>
+                  {/* insta SVG */}
+                  <svg
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="icon-svg"
+                  >
+                    {/* Outer rounded square */}
+                    <rect
+                      x="3"
+                      y="3"
+                      width="18"
+                      height="18"
+                      rx="4"
+                      stroke="#C4A93A"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+
+                    {/* Central circle (camera lens) */}
+                    <circle
+                      cx="12"
+                      cy="12"
+                      r="3.5"
+                      stroke="#C4A93A"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+
+                    {/* Small top-right circle (flash indicator) */}
+                    <circle cx="17.5" cy="6.5" r="0.8" fill="#C4A93A" />
+                  </svg>
+                </span>
+                <span className="email-text">{insta}</span>
+              </div>
+            </div>
+          )}
+          
+          
+        </section>
+
+        {/* Duration & Location card */}
+        <section className="card details-card" aria-labelledby="dur-title">
+          <h3 id="dur-title" className="card-title">
+            Event Duration & Location
+          </h3>
+
+          <div className="detail-row">
+            <div className="icon-box" aria-hidden>
+              {/* calendar SVG */}
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="icon-svg"
+              >
+                <rect
+                  x="3"
+                  y="5"
+                  width="18"
+                  height="16"
+                  rx="2"
+                  stroke="#C4A93A"
+                  strokeWidth="1.5"
+                />
+                <path
+                  d="M16 3V7"
+                  stroke="#C4A93A"
+                  strokeWidth="1.6"
+                  strokeLinecap="round"
+                />
+                <path
+                  d="M8 3V7"
+                  stroke="#C4A93A"
+                  strokeWidth="1.6"
+                  strokeLinecap="round"
+                />
+                <path
+                  d="M3 11H21"
+                  stroke="#C4A93A"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                />
+              </svg>
+            </div>
+            <div className="detail-body">
+              <div className="detail-title">
+                {dateLabel}
+                {timeLabel ? ` | ${timeLabel}` : ""}
+              </div>
+            </div>
+          </div>
+
+          <div className="detail-row">
+            <div className="icon-box" aria-hidden>
+              {/* location pin SVG */}
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="icon-svg"
+              >
+                <path
+                  d="M12 21s7-4.438 7-10A7 7 0 1 0 5 11c0 5.562 7 10 7 10z"
+                  stroke="#C4A93A"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <circle
+                  cx="12"
+                  cy="11"
+                  r="2"
+                  stroke="#C4A93A"
+                  strokeWidth="1.5"
+                />
+              </svg>
+            </div>
+            <div className="detail-body">
+              {/* <div className="detail-title">{venueLabel}</div> */}
+              <a href={mapUrl} target="_blank" rel="noopener noreferrer" className="detail-title link">
+                {venueLabel}
+              </a>
+            </div>
+          </div>
+
+         
+          
+        </section>
+      </div>
+    </div>
+  );
+}

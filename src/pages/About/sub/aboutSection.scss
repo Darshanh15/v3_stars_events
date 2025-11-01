@@ -1,0 +1,846 @@
+// /* aboutSection.scss - modern attractive About section */
+// :root{
+//   --bg: #f8fbfe;
+//   --card: #ffffff;
+//   --primary: #0b74de;
+//   --muted: #6d7280;
+//   --accent: #17c3b2;
+//   --radius: 14px;
+//   --shadow: 0 12px 40px rgba(11,25,50,0.06);
+//   --max: 1200px;
+//   --font-heading: "Poppins", system-ui, sans-serif;
+//   --font-body: Inter, system-ui, sans-serif;
+// }
+
+// .about-hero{
+//   background: linear-gradient(180deg,#f7fbff 0%, var(--bg) 100%);
+//   padding: 48px 20px;
+//   font-family: var(--font-body);
+//   color: #0b1220;
+
+//   .about-inner{
+//     max-width: var(--max);
+//     margin: 0 auto;
+//     display: grid;
+//     grid-template-columns: 1fr 420px;
+//     gap: 32px;
+//     align-items: start;
+//   }
+
+//   .about-left{
+//     .eyebrow{
+//       font-size: 18px;
+//       color: var(--primary);
+//       font-weight: 800;
+//       letter-spacing: 0.4px;
+//       margin: 0 0 6px;
+//       font-family: var(--font-heading);
+//     }
+
+//     .headline{
+//       margin: 0 0 16px;
+//       font-family: var(--font-heading);
+//       font-size: 38px;
+//       line-height: 1.05;
+
+//       span{
+//         color: var(--accent);
+//       }
+//     }
+
+//     .lead{
+//       color: var(--muted);
+//       font-size: 16px;
+//       line-height: 1.6;
+//       margin-bottom: 12px;
+//       max-width: 68ch;
+//     }
+
+//     .mission{
+//       margin-bottom: 20px;
+//       font-weight: 600;
+//       color: #263142;
+//     }
+
+//     .values{
+//       display: grid;
+//       grid-template-columns: repeat(3,1fr);
+//       gap: 12px;
+//       margin-bottom: 20px;
+
+//       .val{
+//         display: flex;
+//         gap: 12px;
+//         background: var(--card);
+//         padding: 12px;
+//         border-radius: 10px;
+//         box-shadow: var(--shadow);
+//         align-items: flex-start;
+
+//         .icon{
+//           min-width: 44px;
+//           height: 44px;
+//           border-radius: 10px;
+//           background: linear-gradient(180deg, rgba(11,116,222,0.08), rgba(11,116,222,0.04));
+//           display: inline-flex;
+//           align-items: center;
+//           justify-content: center;
+//           font-size: 18px;
+//         }
+
+//         h4{ margin: 0 0 6px; font-size: 14px; font-weight: 700; }
+//         p{ margin:0; color: var(--muted); font-size: 13px; line-height: 1.4; }
+//       }
+//     }
+
+//     .cta-row{
+//       display:flex;
+//       gap: 12px;
+
+//       .btn{
+//         padding: 12px 18px;
+//         border-radius: 10px;
+//         font-weight: 700;
+//         text-decoration: none;
+//         display: inline-flex;
+//         align-items: center;
+//         gap: 10px;
+//         transition: transform .18s ease, box-shadow .18s ease;
+//       }
+
+//       .primary{
+//         background: linear-gradient(180deg, var(--primary), #0060c8);
+//         color: white;
+//         box-shadow: 0 10px 28px rgba(11,116,222,0.14);
+//       }
+
+//       .ghost{
+//         border: 2px solid rgba(11,116,222,0.08);
+//         background: transparent;
+//         color: #0b1220;
+//       }
+
+//       .btn:hover{ transform: translateY(-3px); }
+//     }
+//   }
+
+//   .about-right{
+//     display: flex;
+//     flex-direction: column;
+//     gap: 18px;
+
+//     .card.founder{
+//       background: var(--card);
+//       border-radius: 14px;
+//       box-shadow: var(--shadow);
+//       padding: 18px;
+//       display: flex;
+//       gap: 14px;
+//       align-items: center;
+
+//       .founder-media{
+//         width: 92px;
+//         height: 92px;
+//         border-radius: 12px;
+//         overflow: hidden;
+//         background: linear-gradient(135deg,#e8f2ff,#f1f9f7);
+//         display: grid;
+//         place-items: center;
+
+//         img{ width:100%; height:100%; object-fit:cover; display:block; }
+//         .avatar{ font-weight:800; color:var(--primary); font-size:28px; }
+//       }
+
+//       .founder-meta{
+//         h3{ margin:0 0 4px; font-size:18px; }
+//         .role{ font-size:13px; color:var(--muted); margin-bottom:8px; }
+//         .quote{ font-style: italic; color:#234; margin-bottom:8px; }
+//         .contact-mini{
+//           display:flex;
+//           gap: 10px;
+//           list-style:none;
+//           padding:0; margin:0;
+//           li{ display:flex; flex-direction:column; gap:4px; font-size:13px;
+//             strong{ color:var(--muted); font-weight:700; font-size:12px; }
+//             span{ color:#111; font-weight:700; }
+//           }
+//         }
+//       }
+//     }
+
+//     .stats{
+//       display:grid;
+//       grid-template-columns: repeat(3,1fr);
+//       gap: 10px;
+
+//       .stat{
+//         background: var(--card);
+//         padding: 12px;
+//         border-radius: 10px;
+//         box-shadow: var(--shadow);
+//         text-align:center;
+
+//         .num{ font-size:20px; font-weight:800; color:var(--primary); }
+//         .label{ font-size:12px; color:var(--muted); }
+//       }
+//     }
+
+//     .trust{
+//       background:transparent;
+//       .small{ color:var(--muted); margin-bottom:8px; }
+//       .brands{
+//         display:flex;
+//         gap:8px;
+//         .brand{
+//           background: #fff;
+//           border-radius:8px;
+//           padding:8px 12px;
+//           border:1px solid rgba(11,116,222,0.06);
+//           color:var(--text-dark);
+//           font-weight:700;
+//           font-size:13px;
+//         }
+//       }
+//     }
+//   }
+// }
+
+// /* Responsive */
+// @media (max-width: 980px){
+//   .about-inner{ grid-template-columns: 1fr; }
+//   .about-left .values{ grid-template-columns: 1fr 1fr; }
+//   .about-right .stats{ grid-template-columns: repeat(3,1fr); }
+//   .about-right{ order: 2; }
+//   .about-left{ order: 1; }
+// }
+
+// @media (max-width: 520px){
+//   .about-left .values{ grid-template-columns: 1fr; }
+//   .headline{ font-size: 26px; }
+//   .about-right .stats{ grid-template-columns: repeat(2,1fr); }
+// }
+
+
+/* aboutSection.scss - mobile-optimized version (drop-in replacement) */
+:root{
+  --bg: #f8fbfe;
+  --card: #ffffff;
+  --primary: #0b74de;
+  --muted: #6d7280;
+  --accent: #17c3b2;
+  --radius: 14px;
+  --shadow: 0 12px 40px rgba(11,25,50,0.06);
+  --max: 1200px;
+  --font-heading: "Poppins", system-ui, sans-serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --mobile-gap: 18px;
+  --safe-area-bottom: env(safe-area-inset-bottom, 12px);
+}
+
+.about-hero{
+  background: linear-gradient(180deg,#f7fbff 0%, var(--bg) 100%);
+  padding: 48px 20px;
+  font-family: var(--font-body);
+  color: #0b1220;
+  -webkit-font-smoothing:antialiased;
+
+  .about-inner{
+    max-width: var(--max);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: 32px;
+    align-items: start;
+    transition: all .28s ease;
+  }
+
+  /* LEFT COLUMN */
+  .about-left{
+    .eyebrow{
+      font-size: 18px;
+      color: var(--primary);
+      font-weight: 800;
+      letter-spacing: 0.4px;
+      margin: 0 0 6px;
+      font-family: var(--font-heading);
+    }
+
+    .headline{
+      margin: 0 0 16px;
+      font-family: var(--font-heading);
+      font-size: 38px;
+      line-height: 1.05;
+
+      span{
+        color: var(--accent);
+      }
+    }
+
+    .lead{
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 12px;
+      max-width: 68ch;
+    }
+
+    .mission{
+      margin-bottom: 20px;
+      font-weight: 600;
+      color: #263142;
+    }
+
+    .values{
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 12px;
+      margin-bottom: 20px;
+
+      .val{
+        display: flex;
+        gap: 12px;
+        background: var(--card);
+        padding: 12px;
+        border-radius: 10px;
+        box-shadow: var(--shadow);
+        align-items: flex-start;
+        transform: translateY(0);
+        transition: transform .22s ease, box-shadow .22s ease;
+        will-change: transform;
+
+        &:hover{ transform: translateY(-6px); box-shadow: 0 18px 36px rgba(11,25,50,0.08); }
+
+        .icon{
+          min-width: 44px;
+          height: 44px;
+          border-radius: 10px;
+          background: linear-gradient(180deg, rgba(11,116,222,0.08), rgba(11,116,222,0.04));
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 18px;
+        }
+
+        h4{ margin: 0 0 6px; font-size: 14px; font-weight: 700; }
+        p{ margin:0; color: var(--muted); font-size: 13px; line-height: 1.4; }
+      }
+    }
+
+    .cta-row{
+      display:flex;
+      gap: 12px;
+      margin-top: 6px;
+
+      .btn{
+        padding: 14px 18px;
+        border-radius: 12px;
+        font-weight: 800;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        transition: transform .18s ease, box-shadow .18s ease;
+        font-size: 14px;
+      }
+
+      .primary{
+        background: linear-gradient(180deg, var(--primary), #0060c8);
+        color: white;
+        box-shadow: 0 10px 28px rgba(11,116,222,0.14);
+      }
+
+      .ghost{
+        border: 2px solid rgba(11,116,222,0.08);
+        background: transparent;
+        color: #0b1220;
+      }
+
+      .btn:hover{ transform: translateY(-3px); }
+    }
+  }
+
+  /* RIGHT COLUMN */
+  .about-right{
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+
+    .card.founder{
+      background: var(--card);
+      border-radius: 14px;
+      box-shadow: var(--shadow);
+      padding: 18px;
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      transition: transform .28s ease, box-shadow .28s ease;
+
+      .founder-media{
+        width: 92px;
+        height: 92px;
+        border-radius: 12px;
+        overflow: hidden;
+        background: linear-gradient(135deg,#e8f2ff,#f1f9f7);
+        display: grid;
+        place-items: center;
+
+        img{ width:100%; height:100%; object-fit:cover; display:block; }
+        .avatar{ font-weight:800; color:var(--primary); font-size:28px; }
+      }
+
+      .founder-meta{
+        h3{ margin:0 0 4px; font-size:18px; }
+        .role{ font-size:13px; color:var(--muted); margin-bottom:8px; }
+        .quote{ font-style: italic; color:#234; margin-bottom:8px; }
+        .contact-mini{
+          display:flex;
+          gap: 10px;
+          list-style:none;
+          padding:0; margin:0;
+          li{ display:flex; flex-direction:column; gap:4px; font-size:13px;
+            strong{ color:var(--muted); font-weight:700; font-size:12px; }
+            span{ color:#111; font-weight:700; }
+          }
+        }
+      }
+    }
+
+    .stats{
+      display:grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 10px;
+
+      .stat{
+        background: var(--card);
+        padding: 12px;
+        border-radius: 10px;
+        box-shadow: var(--shadow);
+        text-align:center;
+        transition: transform .18s ease;
+
+        .num{ font-size:20px; font-weight:800; color:var(--primary); }
+        .label{ font-size:12px; color:var(--muted); }
+      }
+    }
+
+    .trust{
+      background:transparent;
+      .small{ color:var(--muted); margin-bottom:8px; }
+      .brands{
+        display:flex;
+        gap:8px;
+        align-items:center;
+        .brand{
+          background: #fff;
+          border-radius:8px;
+          padding:8px 12px;
+          border:1px solid rgba(11,116,222,0.06);
+          color:var(--text-dark);
+          font-weight:700;
+          font-size:13px;
+          white-space:nowrap;
+        }
+      }
+    }
+  }
+}
+
+/* Sticky mobile CTA (hidden on larger screens) */
+.mobile-cta{
+  display:none;
+  position: fixed;
+  left: 12px;
+  right: 12px;
+  bottom: calc(12px + var(--safe-area-bottom));
+  z-index: 1200;
+  pointer-events: auto;
+
+  .cta-inner{
+    display:flex;
+    gap: 10px;
+    align-items:center;
+    justify-content:space-between;
+    padding: 12px;
+    border-radius: 14px;
+    background: linear-gradient(90deg, rgba(11,116,222,0.98), rgba(8,96,185,0.95));
+    color: white;
+    box-shadow: 0 16px 34px rgba(11,25,50,0.18);
+    font-weight:800;
+  }
+
+  .cta-actions{ display:flex; gap:8px; align-items:center; }
+
+  .btn{ font-size:14px; padding: 10px 12px; border-radius:10px; }
+}
+
+/* Animations: subtle fade & slide-in for mobile */
+@keyframes slideUpFade {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.about-left, .about-right { animation: slideUpFade .5s ease both; }
+
+
+
+
+/* ----------- Responsive tweaks ----------- */
+// @media (max-width: 980px){
+//   .about-hero{ padding: 36px 18px; }
+
+//   .about-inner{
+//     grid-template-columns: 1fr;
+//     gap: var(--mobile-gap);
+//   }
+
+//   .about-left .values{ grid-template-columns: 1fr 1fr; }
+//   .about-right .stats{ grid-template-columns: repeat(3,1fr); }
+
+//   .about-right{ order: 2; }
+//   .about-left{ order: 1; }
+
+//   /* Slightly bigger headline on small tablets */
+//   .about-left .headline{ font-size: 34px; }
+// }
+
+// /* Mobile - single column / focus on readability & tap targets */
+// @media (max-width: 520px){
+//   .about-hero{ padding: 28px 14px; }
+
+//   .about-left .headline{ font-size: 26px; line-height:1.08; }
+//   .about-left .lead{ font-size: 15px; line-height:1.65; max-width: none; }
+
+//   .about-left .values{ grid-template-columns: 1fr; gap: 10px; }
+//   .about-left .values .val{ padding: 10px; border-radius: 12px; }
+
+//   .about-left .cta-row{ flex-direction: column; align-items: stretch; }
+//   .about-left .btn{ width: 100%; justify-content: center; padding: 14px 16px; font-size: 15px; border-radius: 12px; }
+
+//   /* Founder card becomes full-width, vertically stacked and centered */
+//   .about-right .card.founder{
+//     flex-direction: column;
+//     align-items: center;
+//     text-align: center;
+//     padding: 16px;
+//   }
+//   .about-right .founder-media{ width:120px; height:120px; border-radius:16px; }
+//   .about-right .founder-meta{ margin-top: 8px; }
+//   .about-right .founder-meta h3{ font-size:18px; }
+//   .about-right .founder-meta .role{ font-size:13px; }
+
+//   /* Stats -> horizontal scroll chips */
+//   .about-right .stats{
+//     display:flex;
+//     overflow-x: auto;
+//     padding-bottom: 6px;
+//     gap: 10px;
+//   }
+//   .about-right .stat{
+//     min-width: 120px;
+//     flex: 0 0 auto;
+//   }
+
+//   /* Brands -> horizontally scrollable logos/chips */
+//   .about-right .trust .brands{
+//     display:flex;
+//     overflow-x: auto;
+//     gap: 10px;
+//     padding-bottom: 6px;
+//   }
+//   .about-right .trust .brand{
+//     flex: 0 0 auto;
+//     min-width: 96px;
+//     text-align:center;
+//   }
+
+//   /* Make shadows less heavy on small screens */
+//   .about-right .card.founder,
+//   .about-right .stat,
+//   .about-left .val{
+//     box-shadow: 0 8px 22px rgba(11,25,50,0.06);
+//   }
+
+//   /* show sticky mobile CTA */
+//   .mobile-cta{ display:block; }
+// }
+
+// /* Very small phones */
+// @media (max-width: 380px){
+//   .about-hero{ padding: 22px 12px; }
+//   .about-left .headline{ font-size: 22px; }
+//   .about-left .eyebrow{ font-size: 15px; }
+//   .about-left .lead{ font-size: 14px; }
+//   .about-left .btn{ font-size: 14px; padding: 12px; }
+//   .about-right .founder-media{ width:100px; height:100px; }
+//   .about-right .stat{ min-width: 100px; }
+//   .mobile-cta .cta-inner{ padding: 10px; }
+// }
+
+// /* Accessibility: focus state */
+// .btn:focus, a.btn:focus { outline: 3px solid rgba(23,195,178,0.16); outline-offset: 3px; }
+
+// /* Utility: hide on mobile if needed */
+// .hide-mobile{ display: none; }
+
+
+// /* Responsive Layout Adjustments */
+// @media (max-width: 980px) {
+//   .about-inner {
+//     grid-template-columns:1fr 1fr;
+//     gap: 32px;
+//   }
+
+//   /* Stack order: About Left (top), About Right (bottom) */
+//   .about-left {
+//     order: 1;
+//   }
+//   .about-right {
+//     order: 2;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     text-align: center;
+//     gap: 24px;
+//   }
+
+//   /* Make values in two columns on tablets */
+//   .about-left .values {
+//     grid-template-columns: 1fr 1fr;
+//   }
+
+//   /* Stats layout adjustment */
+//   .about-right .stats {
+//     grid-template-columns: repeat(3, 1fr);
+//     max-width: 480px;
+//     width: 100%;
+//   }
+
+//   /* Center the founder card */
+//   .about-right .card.founder {
+//     max-width: 480px;
+//     width: 100%;
+//   }
+// }
+
+// /* Mobile version (single-column and centered) */
+// @media (max-width: 520px) {
+//   .about-hero {
+//     padding: 28px 16px;
+//   }
+
+//   .about-left .headline {
+//     font-size: 26px;
+//     line-height: 1.1;
+//   }
+
+//   .about-left .values {
+//     grid-template-columns: 1fr;
+//   }
+
+//   /* Founder card centered and full-width */
+//   .about-right .card.founder {
+//     flex-direction: column;
+//     align-items: center;
+//     text-align: center;
+//     padding: 16px;
+//     width: 100%;
+//   }
+
+//   .about-right .founder-media {
+//     width: 120px;
+//     height: 120px;
+//     margin-bottom: 12px;
+//   }
+
+//   /* Stats become scrollable chips */
+//   .about-right .stats {
+//     display: flex;
+//     overflow-x: auto;
+//     gap: 12px;
+//     padding-bottom: 8px;
+//     justify-content: center;
+//     width: 100%;
+//   }
+
+//   .about-right .stat {
+//     min-width: 120px;
+//     flex: 0 0 auto;
+//   }
+
+//   /* Trust logos horizontal scroll */
+//   .about-right .trust .brands {
+//     display: flex;
+//     overflow-x: auto;
+//     gap: 12px;
+//     padding-bottom: 8px;
+//     justify-content: center;
+//   }
+
+//   .about-right .trust .brand {
+//     min-width: 100px;
+//     flex: 0 0 auto;
+//     text-align: center;
+//   }
+// }
+
+
+/* ---------- Responsive: stack .about-left above .about-right ---------- */
+/* Replace your existing responsive rules with these */
+
+@media (max-width: 980px) {
+  /* make the main wrapper single-column */
+//   .about-inner {
+//     display: grid;
+//     grid-template-columns: 1fr;
+//     gap: 28px;
+//   }
+
+.about-inner {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center;
+    gap: 28px !important;
+  }
+
+  /* enforce explicit visual order: left (text) first, right (founder+stats) second */
+  .about-left {
+    order: 1;
+    width: 100%;
+    align-self: start;
+  }
+
+  .about-right {
+    order: 2;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;      /* center content horizontally */
+    text-align: center;       /* center text inside */
+    gap: 20px;
+    padding-top: 4px;
+  }
+
+  /* reduce left-values columns for tablet */
+  .about-left .values {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  /* founder card max width and centered */
+  .about-right .card.founder {
+    width: 100%;
+    max-width: 520px;
+    padding: 16px;
+    box-sizing: border-box;
+  }
+
+  /* stats become a centered grid but constrained width */
+  .about-right .stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    width: 100%;
+    max-width: 520px;
+  }
+
+  /* brands centered and wrapped when space permits */
+  .about-right .trust .brands {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    max-width: 520px;
+  }
+}
+
+/* Mobile — tighter spacing, single column, horizontal scroll for small chips */
+@media (max-width: 520px) {
+  .about-inner {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  /* ensure top text is full width and readable */
+  .about-left {
+    order: 1;
+    width: 100%;
+    padding: 0;
+  }
+
+  .about-left .headline { font-size: 26px; }
+  .about-left .lead { font-size: 15px; line-height: 1.6; }
+
+  /* full width values stacked */
+  .about-left .values {
+    grid-template-columns: repeat(1, 1fr) !important;
+    gap: 10px;
+  }
+
+  /* Right section becomes full-width block, centered */
+  .about-right {
+    order: 2;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+  }
+
+  /* founder card stacked, centered and slightly larger avatar */
+  .about-right .card.founder {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    max-width: 420px;
+    padding: 14px;
+  }
+  .about-right .founder-media {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 10px;
+  }
+
+  /* Stats -> horizontally scrollable chips for easy thumb access */
+  .about-right .stats {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    padding-bottom: 6px;
+    width: 100%;
+  }
+  .about-right .stat {
+    flex: 0 0 auto;
+    min-width: 120px;
+  }
+
+  /* Brands -> scrollable row */
+  .about-right .trust .brands {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding-bottom: 6px;
+    width: 100%;
+  }
+  .about-right .trust .brand {
+    flex: 0 0 auto;
+    min-width: 96px;
+  }
+
+  /* CTA buttons stack full width */
+  .about-left .cta-row {
+    flex-direction: column;
+    gap: 10px;
+    align-items: stretch;
+  }
+  .about-left .btn {
+    width: 90%;
+    justify-content: center;
+  }
+}
+
+/* Accessibility: keep a clear tabindex/focus style if you have custom focus rules */
+.btn:focus, a.btn:focus { outline: 3px solid rgba(23,195,178,0.16); outline-offset: 3px; }
+
+

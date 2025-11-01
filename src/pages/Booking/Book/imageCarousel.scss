@@ -1,0 +1,176 @@
+// /* imageCarousel.scss */
+// .ic-root {
+//   position: relative;
+//   overflow: hidden;
+//   border-radius: 8px;
+//   background: #f2f4f7;
+//   user-select: none;
+
+//   .ic-track {
+//     display: flex;
+//     height: 100%;
+//     transition: transform 300ms cubic-bezier(.2,.9,.2,1);
+//     will-change: transform;
+//   }
+
+//   .ic-slide {
+//     flex: 0 0 auto;
+//     height: 100%;
+//     display: grid;
+//     place-items: center;
+
+//     img {
+//       width: 100%;
+//       height: 100%;
+//       object-fit: cover;
+//       display: block;
+//     }
+//   }
+
+//   .ic-arrow {
+//     position: absolute;
+//     top: 50%;
+//     transform: translateY(-50%);
+//     width: 38px;
+//     height: 38px;
+//     border-radius: 50%;
+//     border: none;
+//     background: rgba(255,255,255,0.95);
+//     box-shadow: 0 6px 18px rgba(11,25,50,0.12);
+//     display: grid;
+//     place-items: center;
+//     font-size: 20px;
+//     cursor: pointer;
+//     z-index: 30;
+//     transition: transform .12s ease, background .12s ease;
+//   }
+
+//   .ic-arrow:active { transform: translateY(-50%) scale(.98); }
+//   .ic-arrow--left { left: 10px; }
+//   .ic-arrow--right { right: 10px; }
+
+//   .ic-dots {
+//     position: absolute;
+//     left: 50%;
+//     transform: translateX(-50%);
+//     bottom: 8px;
+//     display: flex;
+//     gap: 8px;
+//     z-index: 30;
+//   }
+
+//   .ic-dot {
+//     width: 9px;
+//     height: 9px;
+//     border-radius: 999px;
+//     border: none;
+//     background: rgba(255,255,255,0.8);
+//     box-shadow: 0 1px 2px rgba(11,25,50,0.06) inset;
+//     cursor: pointer;
+//     transition: transform .12s ease, background .12s ease;
+//   }
+
+//   .ic-dot.active {
+//     width: 28px;
+//     height: 9px;
+//     border-radius: 6px;
+//     background: rgba(255,255,255,0.98);
+//     box-shadow: 0 6px 18px rgba(11,25,50,0.12);
+//   }
+
+//   /* small screens: reduce arrow size & padding */
+//   @media (max-width: 520px) {
+//     .ic-arrow { width: 34px; height: 34px; font-size: 18px; }
+//     .ic-dot.active { width: 22px; }
+//   }
+// }
+
+
+
+/* imageCarousel.scss */
+
+.ic-root {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #f2f4f7;
+  user-select: none;
+
+  .ic-track {
+    display: flex;
+    height: 100%;
+    transition: transform 300ms cubic-bezier(.2,.9,.2,1);
+    will-change: transform;
+  }
+
+  .ic-slide {
+    flex: 0 0 auto;
+    height: 100%;
+    display: grid;
+    place-items: center;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  }
+
+  .ic-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: none;
+    // background: rgba(255,255,255,0.95);
+    // box-shadow: 0 6px 18px rgba(11,25,50,0.12);
+    display: grid;
+    place-items: center;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 30;
+    transition: transform .12s ease, background .12s ease;
+  }
+
+  .ic-arrow:active { transform: translateY(-50%) scale(.98); }
+  .ic-arrow--left { left: 10px; }
+  .ic-arrow--right { right: 10px; }
+
+  .ic-dots {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 8px;
+    display: flex;
+    gap: 8px;
+    z-index: 30;
+  }
+
+  .ic-dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 999px;
+    border: none;
+    background: rgba(255,255,255,0.8);
+    box-shadow: 0 1px 2px rgba(11,25,50,0.06) inset;
+    cursor: pointer;
+    transition: transform .12s ease, background .12s ease;
+  }
+
+  .ic-dot.active {
+    width: 28px;
+    height: 4px;
+    border-radius: 6px;
+    background: rgba(255,255,255,0.98);
+    box-shadow: 0 6px 18px rgba(11,25,50,0.12);
+  }
+
+  /* small screens: reduce arrow size & padding */
+  @media (max-width: 520px) {
+    .ic-arrow { width: 34px; height: 34px; font-size: 18px; }
+    .ic-dot.active { width: 22px; }
+  }
+}

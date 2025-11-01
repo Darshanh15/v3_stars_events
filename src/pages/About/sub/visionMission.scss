@@ -1,0 +1,193 @@
+/* visionMission.scss - stylish Vision & Mission section */
+:root {
+  --vm-bg: #fff;
+  --vm-accent: #0b74de;
+  --vm-accent-2: #17c3b2;
+  --vm-muted: #64707a;
+  --vm-radius: 14px;
+  --vm-shadow: 0 12px 30px rgba(11,25,50,0.06);
+  --vm-gap: 22px;
+  --vm-max: 1100px;
+  --vm-font-heading: "Poppins", system-ui, sans-serif;
+  --vm-font-body: Inter, system-ui, sans-serif;
+}
+
+.vm-section{
+  background: linear-gradient(180deg, #f8fbff 0%, #fbfdff 100%);
+  padding: 48px 20px;
+  font-family: var(--vm-font-body);
+  color: #0b1220;
+}
+
+.vm-inner{
+  max-width: var(--vm-max);
+  margin: 0 auto;
+}
+
+.vm-header {
+  text-align: center;
+  margin-bottom: 26px;
+
+  .kicker {
+    color: var(--vm-accent);
+    font-weight: 800;
+    letter-spacing: 0.4px;
+    font-size: 13px;
+    margin-bottom: 8px;
+    font-family: var(--vm-font-heading);
+  }
+
+  h2 {
+    font-family: var(--vm-font-heading);
+    font-size: 30px;
+    margin: 0 0 8px;
+  }
+
+  .subtitle {
+    color: var(--vm-muted);
+    font-size: 15px;
+    max-width: 780px;
+    margin: 0 auto;
+  }
+}
+
+/* grid layout */
+.vm-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--vm-gap);
+  margin-bottom: 22px;
+}
+
+/* card base */
+.vm-card {
+  background: var(--vm-bg);
+  border-radius: var(--vm-radius);
+  padding: 22px;
+  box-shadow: var(--vm-shadow);
+  position: relative;
+  overflow: visible;
+
+  h3 {
+    margin: 8px 0 10px;
+    font-family: var(--vm-font-heading);
+    font-size: 20px;
+  }
+
+  .vm-icon {
+    position: absolute;
+    top: -18px;
+    left: 18px;
+    width: 56px;
+    height: 56px;
+    border-radius: 12px;
+    background: linear-gradient(180deg, rgba(11,116,222,0.12), rgba(11,116,222,0.04));
+    display: grid;
+    place-items: center;
+    font-size: 24px;
+  }
+}
+
+/* Vision specifics */
+.vm-vision {
+  .vm-quote {
+    margin: 8px 0 12px;
+    font-style: italic;
+    color: #0e2b46;
+    padding-left: 12px;
+    border-left: 3px solid rgba(11,116,222,0.12);
+  }
+  .vm-note {
+    color: var(--vm-muted);
+  }
+}
+
+/* Mission specifics */
+.vm-mission {
+  .vm-list {
+    list-style: none;
+    padding: 0;
+    margin: 6px 0 12px;
+    display: grid;
+    gap: 12px;
+
+    li {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+
+      .bullet {
+        min-width: 36px;
+        height: 36px;
+        border-radius: 10px;
+        background: linear-gradient(180deg, rgba(11,116,222,0.08), rgba(11,116,222,0.03));
+        display: grid;
+        place-items: center;
+        color: var(--vm-accent);
+        font-weight: 700;
+      }
+
+      strong { display:block; font-size: 15px; }
+      .small { color: var(--vm-muted); font-size: 13px; }
+    }
+  }
+
+  .vm-cta-row {
+    display:flex;
+    gap: 10px;
+    margin-top: 6px;
+
+    .btn {
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-weight: 700;
+      text-decoration: none;
+      display:inline-block;
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+      border: none;
+      cursor: pointer;
+    }
+    .primary {
+      background: linear-gradient(180deg, var(--vm-accent), #0060c8);
+      color: white;
+      box-shadow: 0 10px 28px rgba(11,116,222,0.12);
+    }
+    .ghost{
+      background: transparent;
+      border: 2px solid rgba(11,116,222,0.08);
+      color: #0b1220;
+    }
+    .btn:hover{ transform: translateY(-3px); }
+  }
+}
+
+
+/* stats footer */
+.vm-stats {
+  display:flex;
+  gap: 18px;
+  justify-content:center;
+  margin-top: 14px;
+
+  .stat {
+    background: white;
+    padding: 12px 18px;
+    border-radius: 10px;
+    box-shadow: var(--vm-shadow);
+    text-align:center;
+    min-width: 120px;
+
+    .num { font-weight: 800; color: var(--vm-accent); font-size: 20px; }
+    .label { color: var(--vm-muted); font-size: 13px; margin-top: 6px; }
+  }
+}
+
+/* responsive */
+@media (max-width: 880px) {
+  .vm-grid { grid-template-columns: 1fr; }
+  .vm-card .vm-icon { left: 14px; top: -16px; }
+  .vm-header h2 { font-size: 24px; }
+  .vm-stats { flex-direction: column; gap: 10px; align-items: center; }
+}
+
+
