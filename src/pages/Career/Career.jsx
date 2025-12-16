@@ -1,15 +1,18 @@
 import React from 'react'
 import Social from './sub/Social'
 import Cards from './sub/Cards'
+import Careers from './sub/Careers'
+import CareersCompact from './sub/CareersCompact'
 
 
 function Career() {
   return (
     <>
-    
-    <div>Career</div>
-    <Social />
-    <Cards />
+    <Careers />
+    {/* <CareersCompact /> */}
+    {/* <div>Career</div> */}
+    {/* <Social /> */}
+    {/* <Cards /> */}
     </>
   )
 }

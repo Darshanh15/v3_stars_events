@@ -35,6 +35,8 @@ import Footer from './components/Footer/Footer';
 import Explore from './pages/Booking/Book/Explore';
 import EventDetails from './pages/Booking/Book/EventDetails';
 import Career from './pages/Career/Career';
+import Achievements from './pages/Achievements/Achievements';
+import Achievement from './pages/Achievements/Achievement';
 
 
 function App() {
@@ -47,6 +49,7 @@ function App() {
         <Route path="/explore" element={<Explore />} />
         <Route path="/event/:id" element={<EventDetails />} />
         <Route path="/career" element={<Career />} />
+        <Route path="/achievement" element={<Achievement />} />
         {/* <Route path="/Service" element={<Service />} /> */}
       </Routes>
       <Footer />

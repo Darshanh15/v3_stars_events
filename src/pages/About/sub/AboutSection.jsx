@@ -75,7 +75,7 @@ export default function AboutSection() {
               {founderImg ? <img src={founderImg} alt="Mrs. Channveer" /> : <div className="avatar">C</div>}
             </div>
             <div className="founder-meta">
-              <h3>Mrs. Channveer</h3>
+              <h3>Mr. Channveer</h3>
               <p className="role">Founder & Creative Director</p>
               <p className="quote">“We convert visions into celebrations — every time.”</p>
               <ul className="contact-mini">

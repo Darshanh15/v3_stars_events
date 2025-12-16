@@ -605,6 +605,8 @@ import EventInfoCards1 from "./EventInfoCards1.jsx";
 import Organizing from "./Organizing.jsx";
 import ExpoRegistration from "../Registration/ExpoRegistration.jsx";
 import BookingForm from "../Registration/BookingForm.jsx";
+import BenefitsForVisitors from "./BenefitsForVisitors.jsx";
+import BenefitsForExhibitors from "./BenefitsForExhibitors.jsx";
 
 export default function EventDetails() {
   const location = useLocation();
@@ -704,6 +706,8 @@ export default function EventDetails() {
 <BookingForm />
 
        <Organizing />
+       <BenefitsForVisitors />
+       <BenefitsForExhibitors />
 {/* <EventInfoCards /> */}
 {/* <ExpoRegistration /> */}
 
