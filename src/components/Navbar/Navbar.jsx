@@ -18,7 +18,7 @@ function Navbar() {
   };
 
   const menuItems = [
-    { name: "Home", icon: <FaHome />, path: "/v3_stars_events" },
+    { name: "Home", icon: <FaHome />, path: "/" },
     { name: "About us", path: "/about" },
     { name: "Achievement", path: "/achievement" },
    
@@ -93,7 +93,7 @@ return (
   <>
     <nav className="navbar">
       <div className="navbar-logo">
-        <Link to="/v3_stars_events" onClick={closeAllMenus}>
+        <Link to="/" onClick={closeAllMenus}>
           <img src={logo} alt="Logo" />
         </Link>
       </div>

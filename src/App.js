@@ -44,7 +44,7 @@ function App() {
     <>
       <Navbar />
       <Routes>
-        <Route path="/v3_stars_events" element={<Home />} />
+        <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/explore" element={<Explore />} />
         <Route path="/event/:id" element={<EventDetails />} />
